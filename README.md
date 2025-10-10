@@ -2,20 +2,17 @@
 
 **goal**: Test undo/redo functionality in remote development (undo/redo in standalone PyCharm can be considered the expected behavior).
 
-<!--
-## how to read this repo
-- `/plan/ScopeMatrix.md` — what will be tested (scope) and how deep (L1/L2/L3 where L3 is the deepest)
-- `/plan/TestPlan.md` — short plan: objective, envs, entry/exit, evidence
-- `/cases/` — one markdown per test case
-- `/summary/SummaryMatrix.md` — one-line status per test
-- `/env/rd_env_snapshot.txt` — environment snapshot (server + controller)
--->
+## Test Artifacts
+- plan/ScopeMatrix.md — in/out + depth (L1/L2/L3)
+- plan/TestPlan.md — objective, envs, entry/exit, evidence, notes, etc.
+- cases/ — one md per test case
+- summary/SummaryMatrix.md — one-line status per test
 
 ## Oracle policy
 - **standalone pycharm** is the expected behavior. If RD differs and it’s not an explicitly documented exception, a bug needs be filed.
 
 ## Fallback
-- if gitpod is flaky, **ssh** with gateway will be used. (will be documented in notes if applicable..)
+- If gitpod is flaky, **ssh** with gateway will be used. (will be documented in notes if applicable..)
 
 ## Time estimate
 - planned effort: 
