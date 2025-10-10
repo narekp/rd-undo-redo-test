@@ -12,7 +12,7 @@
 -->
 
 ## Oracle policy
-- **standalone pycharm** is the expected behavior. if RD differs and it’s not an explicitly documented exception, a bug needs be filed.
+- **standalone pycharm** is the expected behavior. If RD differs and it’s not an explicitly documented exception, a bug needs be filed.
 
 ## Fallback
 - if gitpod is flaky, **ssh** with gateway will be used. (will be documented in notes if applicable..)
