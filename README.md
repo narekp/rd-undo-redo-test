@@ -14,8 +14,9 @@
 ## Fallback
 - If gitpod is flaky, **ssh** with gateway will be used. (will be documented in notes if applicable..)
 
-## Time estimate
-- planned effort: 
+## Time estimate and Delivery
+- planned effort: ~16 hours
+- planned delivery: Tuesday, Oct 14
 
 ## Bug Priority Definitions and Issue Labels
     - Created a label for the UI / UX tickets - "ui / ux".
