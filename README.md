@@ -3,9 +3,9 @@
 **goal**: Test undo/redo functionality in remote development (undo/redo in standalone PyCharm can be considered the expected behavior).
 
 ## Test Artifacts
-- plan/ScopeMatrix.md — in/out + depth (L1/L2/L3)
-- plan/TestPlan.md — objective, envs, entry/exit, evidence, notes, etc.
-- cases/ — one md per test case
+- plan/ScopeMatrix.md — in/out + depth (L1/L2/L3) https://github.com/narekp/rd-undo-redo-test/blob/main/scopeMatrix.md
+- plan/TestPlan.md — objective, envs, entry/exit, evidence, notes, etc. 
+- cases/ — one md per test case https://github.com/narekp/rd-undo-redo-test/blob/main/testCases.md
 - summary/SummaryMatrix.md — one-line status per test
 
 ## Oracle policy
