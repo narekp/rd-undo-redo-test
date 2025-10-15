@@ -8,8 +8,13 @@
 - cases/ — one md per test case https://github.com/narekp/rd-undo-redo-test/blob/main/testCases.md
 - summary/SummaryMatrix.md — one-line status per test
 
+## Test Environment
+System and local IDE: PyCharm 2025.2.3 (#PY-252.26830.99), macOS 15.3.2, Apple M1 Pro
+RD client: PyCharm 2025.1.1.1 (#JBC-251.25410.159)
+RD backend: Ubuntu 22.04.2 LTS, Linux 6.1.139, Python 3.8.16 (Gitpod container)
+
 ## Oracle policy
-- **standalone pycharm** is the expected behavior. If RD differs and it’s not an explicitly documented exception, a bug needs be filed.
+- **standalone pycharm** is the expected behavior. If RD differs and it’s not an explicitly documented exception, a bug needs to be filed.
 
 ## Fallback
 - If gitpod is flaky, **ssh** with gateway will be used. (will be documented in notes if applicable..)
