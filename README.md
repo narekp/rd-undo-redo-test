@@ -13,6 +13,17 @@ System and local IDE: PyCharm 2025.2.3 (#PY-252.26830.99), macOS 15.3.2, Apple M
 RD client: PyCharm 2025.1.1.1 (#JBC-251.25410.159)
 RD backend: Ubuntu 22.04.2 LTS, Linux 6.1.139, Python 3.8.16 (Gitpod container)
 
+## Remote Dev target (current)
+**Date change:** 2025-10-16
+
+**Why the switch:** Gitpod Classic was sunset by Oct 16 and Ona’s “Open in PyCharm” hand-off didn’t reliably attach a JetBrains client for me. 
+As per the assignment note that **SSH is allowed**, I moved to an SSH-based setup to keep the assignment progress.
+
+**What I use now:** **JetBrains Gateway > SSH > local Docker (Ubuntu 22.04) container**.  
+- The IDE **backend** runs inside the container; the **JetBrains Client** runs on my device.  
+- The project is bind-mounted at **/workspace**. Ports are forwarded by Gateway.  
+- **Standalone PyCharm on macOS remains the oracle** for expected Undo/Redo behavior as noted in the assingment PDF.
+
 ## Oracle policy
 - **standalone pycharm** is the expected behavior. If RD differs and it’s not an explicitly documented exception, a bug needs to be filed.
 
