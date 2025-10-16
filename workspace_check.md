@@ -41,26 +41,15 @@ test -f ~/home_marker.txt && echo "home OK" || echo "home missing"
 test -f mysite/persisted_in_repo.txt && echo "repo file OK"
 ```
 
-## Current RD target (SSH over Docker)
+## Ona RD snapshot (ACTIVE)
 
-- **Host:** `localhost:2222` (SSH), user `narek`
-- **Distro:** Ubuntu 22.04 (container)
-- **Project root:** `/workspace` (bind-mounted from `/Users/narek/Projects/rd-undo-redo-test/template-python-django`)
-- **Python:** `3.10.12` (venv in `.venv` when created)
-- **Repo origin:** `https://github.com/gitpod-samples/template-python-django.git`
-- **Persistence:** `/workspace` ✅ persists; `/home/narek` is ephemeral
-- **Ports:** forwarded by Gateway (e.g., `python manage.py runserver 0.0.0.0:8000` → open via Ports toast)
+**Validated:** 2025-10-16
 
-### Reattach / lifecycle
-- **Stop:** `docker stop rd-ssh`
-- **Start:** `docker start rd-ssh` then ensure sshd:  
-  `docker exec -u root rd-ssh bash -lc 'pgrep -x sshd >/dev/null || /usr/sbin/sshd -D >/var/log/sshd.log 2>&1 & disown'`
-- **Reconnect:** JetBrains Gateway → SSH (localhost:2222) → select `/workspace` → PyCharm.
-
-### One-time verification (done)
-```bash
-whoami         # narek
-pwd            # /workspace
-python3 --version
-git -C /workspace remote -v | sed -n '1p'
-# origin  https://github.com/gitpod-samples/template-python-django.git (fetch)
+- OS / Kernel: `Ubuntu 24.04.3 LTS`, `6.14.10-gitpod`
+- User / Host / PWD: `vscode`, `<cloud host>`, `/workspaces/template-python-django`
+- Python: `3.12.3`
+- Repo origin (first line): `origin  https://github.com/gitpod-samples/template-python-django.git (fetch)`
+- Persistence markers:
+  - `/workspaces/_ona_persist.txt` **OK**
+  - `./mysite/_repo_probe.txt` **OK**
+  - `~/home_probe.txt` **OK**
