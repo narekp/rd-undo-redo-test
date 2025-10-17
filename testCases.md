@@ -22,7 +22,7 @@
 
    **Expected:** exactly N tokens are removed.
 
-3. Perform **redo (cmd+shift+z)** the same number of times (N)
+3. Perform redo the same number of times (N)
 
    **Expected:** exactly N tokens reappear, counts match.
 
@@ -30,35 +30,35 @@
 
 ## P1-03
 
-**Verify that a new edit clears the redo stack** ##########REDO STACK?
+**Verify that a new edit clears the redo stack**
 
-1. Type a word (e.g., `HEL`).
-2. Copy the word `LO`
-3. Paste right next to `HEL`
-- `HELLO`is created
-4. Do **undo (cmd+z)** (expected = `HEL`)
-5. Do Redo (expeced = `HELLO`) and do undo again (result = `HEL`)
-6. Type a new character `!` in the end of `HEL` (result = `HEL!`) 
-6. Do **redo (cmd+shift+z)**.
+1. Type a word `HEL` then paste the word `LO` to make `HELLO`
+2. Undo (expected = `HEL`)
+3. Redo (expeced = `HELLO`) 
+4. Undo again (expected = `HEL`)
+5. Type `!` to make `HEL!`
+6. Do redo.
    
-   **Expected:** nothing happens, Redo stack is empty, no "time-travel" to the old future = `LO`is observed..
+   **Expected:** nothing happens, Redo stack is empty as it is cleared by the new edit (`!`).
 
 ---
 
 ## P1-04
 
-**Verify that a multi-caret change undoes/redoes as a single step**
+**Verify that undo/redo is applies properly to multi-caret changes in a single step**
 
-1. Create multiple carets by adding carets to selected lines - hold the `option` key and click on the selected lines
+1. Create multiple carets by adding carets to selected lines (hold the `option` key and click on the selected lines' places)
 2. Type a token `ABC` once.
+   
    **Expected:** all carets insert simultaneously.
-3. Do undo
 
-   **Expected:** all insertions revert together; caret geometry restored.
+4. Do undo
+
+   **Expected:** All `ABC `insertions revert together simultaneously at the same positions.
    
 5. Do redo
    
-   **Expected:** all insertions reapply together at the same positions.
+   **Expected:** All `ABC `insertions reapply together simultaneously at the same positions.
 
 ---
 
@@ -75,43 +75,42 @@
    
    **Expected:** the change (`X`) is undone in both panes simultaneously and both panes show the same state.
    
-5. Do **redo (cmd+shift+z)**.
+4. Do redo.
    
    **Expected:** the change (`X`) appears back in both panes.
 
 ---
 
-
----
-
 ## P1-06
 
-**Verify that renaming a file/module updates imports and is reversible.**
+**Verify that file/module rename undo/redo adjusts and reverts imports properly**
 
-1. Rename a file/module (rename file_a to file_c) that is imported in another place (file_a imported in file_b) using the IDE rename/refactor.
-- errors for import appear in file be 
-3. Do **undo**
-  
-   **Expected:** original filename and all import statements are restored, errors are automatically resolved
-  
-4. Do redo
+1. Rename `file_a.py` (where `file_b.py` imports it)
+2. Change the name to `file_c`
+   - Verify an import error appears in `file_b`
+4. Undo
 
-   **Expected:** File name is changed to file_c again
+The original filename (`file_a.py`) and all import statements are reverted; the import error in `file_b`is cleared.
+
+5. Redo
+
+**Expected Result:** The filename changes back to `file_c.py` with imports updated again
 
 ---
 
 ## P1-07
 
-**Verify that moving a file updates imports and is reversible.**
+**Verify that moving a file updates imports and is reversible**
 
 1. Move a file to a different folder using the IDE move/refactor.
 
-**Expected:** the file where the code was imported updates automatically; no unresolved imports.
+**Expected:** the file where the code was imported updates automatically, no unresolved imports.
 
 2. Do **undo**.
    
    **Expected:** file returns to original location; imports revert.
-4. Do **redo**
+   
+4. Redo
 
    **Expected:** move and import updates apply again properly.
 
@@ -137,6 +136,7 @@
 **Expected:** `test_deletion.txt` is deleted again.
 
 ---
+
 ## P1-09
 
 **Verify that Safe Delete undo/redo removes and restores usages properly**
@@ -147,7 +147,7 @@ b. file2.py
 2. In file1.py add `def test_safe_delete(): return "hello"`
 3. In file2.py add `from file1 import test_safe_delete` and `result = test_safe_delete()`
 4. Right click on `file1` > Delete (make sure `Safe Delete`is checked) > OK > Press "Refactor Anyway"
-   - Make sure `file1` is deleted and that `file2` has unresolved reference errors on `from test9 import test_safe_delete`
+   - Make sure `file1` is deleted and that `file2` has unresolved reference errors on `from test1 import test_safe_delete`
 6. On Project panel perform Undo
 
    **Expected:**
@@ -184,17 +184,17 @@ b. file2.py
 
 1. Open two different files (A and B).
 2. Make one edit in each add text `test` in each
-4. Perform Undo in file B
+4. Perform Undo in `file B`
    
-   **Expected:** `test`is removed from File B, file A stays unchanged.
+   **Expected:** `test` is removed from `File B`, `file A` stays unchanged.
    
 5. In file A do Undo
    
-   **Expected:** `test`is removed from File B, file A stays unchanged.
+   **Expected:** `test` is removed from `File A`, `file B` stays unchanged.
 
 6. In File A do Redo
 
-   **Expected:** File A now has `test`again and File B still has no `test`in its body.
+   **Expected:** File A now has `test` again and File B still has no `test` in its body.
    
 ---
 
@@ -208,11 +208,11 @@ b. file2.py
    
    **Expected:** No change occurs, undo doesn't affect, `import` stays as is
    
-5. Reconnect > remote session restored
+4. Reconnect > remote session restored
    
    **Expected:** editor is in a consistent state matching the state before the remote connection was lost
    
-7. in File A do Undo
+5. in File A do Undo
 
    **Expected:** `import` is removed.
 
@@ -239,15 +239,15 @@ b. file2.py
 
 **Verify Undo/Redo functions properly in steps when doing big grouped**
 
-1. Create a x.py file with 10-line code block
+1. Create a `x.py` file with 10-line code block
 2. Select the block and copy to the clipboard
 3. Paste 9 times starting from row 11
 - make sure the block is pasted properly and ends on line 100
-4. Do undo three times
+4. Perform Undo three times
 
    **Expected:** the last 3 duplicated blocks are removed (each block disappears with a single step), editor remains responsive (no freeze/stall), ends on row 70.
 
-5. Do Redo twice
+5. Perform Redo twice
 
    **Expected:** Two blocks are restored back and ends on line 90
 
@@ -272,13 +272,13 @@ b. file2.py
 **Verify that a Quick Fix import is fully removed/returned by undo/redo**
 
 1. In any Python file, write a call to a function that isn’t imported yet (e.g., `ping()`).
-2. Place caret on the unresolved call and press **option+enter (alt+enter)** > "intention actions" choose an appropriate **Import …** intention.
+2. Place caret on the unresolved call and press (option+enter / alt+enter) > "intention actions" choose an appropriate **Import …** intention.
 - appropriate import is done in code and the error is gone
-3. Do Undo
+3. Undo
 
    **Expected:** the added import is removed, code returns to the unresolved state exactly.
 
-4. Do **redo (cmd+shift+z)**.
+4. Do Redo.
 
    **Expected:** the same import is added back exactly (same location in code).
 
@@ -338,8 +338,8 @@ b. file2.py
 
 **Verify template expansion collapses by Undo and re-expands as is by Redo.**
 
-1. In a .py file on a blank line type a template key `main`) 
-2. expand it with the corresponding keymap (Tab/Enter).
+1. In a .py file on a blank line type a template key - `main`
+2. Expand it with the corresponding keymap (Tab / Enter)
    - Make sure the expansion took place and the following is now there as follows:
 ```python
    if __name__ == '__main__':
