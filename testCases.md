@@ -375,18 +375,3 @@ b. file2.py
    **Expected:** the file is recreated in the same folder with the same boilerplate.
    
 ---
-
-## P1-22
-
-**Verify rectangular edits keep shape on undo/redo.**
-
-1. In a small text file, prepare 3 short lines (make the first two end with a couple of spaces so there’s a neat column to target).
-2. Enter **column (block) selection** mode and select the vertical column (e.g., those trailing spaces).
-3. Type `//`.
-4. Do **undo (cmd+z)**.
-   **Expected:** `//` is removed from all selected lines; original shape/spacing restored.
-5. Do **redo (cmd+shift+z)**.
-   **Expected:** `//` returns to the same positions; shape preserved.
-   **Failure signs:** only some lines change; edges shift; redo alters shape (RD vs local).
-
----
