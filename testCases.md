@@ -119,21 +119,50 @@
 
 ## P1-08
 
-**Verify that deleting a file is properly undoable and redoable**
+**Verify that file deletion undo/redo removes and restores content properly**
 
-1. In the IDE project files, right click on a file that has content `a` > Delete > OK (uncheck safe delete)
-- the file is deleted
-2. Undo
+1. Right click on a folder > New > File.
+2. Name the new file `test_deletion.txt` > Enter.
+3. Type `test content` into the file and save.
+4. Right click `test_deletion.txt` > Delete > OK (uncheck Safe delete > OK).
+- Make sure `test_deletion.txt` is deleted.
+5. Undo
 
-   **Expected:** the file is returned and contains the same content with the same contents/metadata.
+  **Expected:** `test_deletion.txt` reappers in the same directory and has `test content` in its body.
 
-3. Redo
+6. Redo
 
-   **Expected:** the file is deleted again
+**Expected Result:**
+
+**Expected:** `test_deletion.txt` is deleted again.
+
+---
+## P1-09
+
+**Verify that Safe Delete undo/redo removes and restores usages properly**
+
+1. In a directory (marked as Source Root; to enable import auto resolution) create two files:
+a. file1.py
+b. file2.py
+2. In file1.py add `def test_safe_delete(): return "hello"`
+3. In file2.py add `from file1 import test_safe_delete` and `result = test_safe_delete()`
+4. Right click on `file1` > Delete (make sure `Safe Delete`is checked) > OK > Press "Refactor Anyway"
+   - Make sure `file1` is deleted and that `file2` has unresolved reference errors on `from test9 import test_safe_delete`
+6. On Project panel perform Undo
+
+   **Expected:**
+   - `file1` is restored to its directroy and has `def test_safe_delete(): return "hello"`
+   - in `file2` function and usage are restored without errors.
+  
+7. Perform Redo
+
+   **Expected:**
+   - `file1` is removed again
+   - `file2` has unresolved reference errors due to usage being removed again.
    
 ---
 
-## P1-09
+## P1-10
 
 **Verify that rapid typing/deleting is properly undoable**
 
@@ -149,7 +178,7 @@
  
 ---
 
-## P1-10
+## P1-11
 
 **Verify that undo/redo history affect only the current/selected document**
 
@@ -169,7 +198,7 @@
    
 ---
 
-## P1-11
+## P1-12
 
 **Verify Undo behavior when Remote Session connection is disconnected and post-reconnection**
 
@@ -189,7 +218,7 @@
 
 ---
 
-## P1-12
+## P1-13
 
 **Verify that Undo/Redo functions properly for bulk replace across multiple files and remains atomic**
 
@@ -206,7 +235,7 @@
 
 ---
 
-## P1-13
+## P1-14
 
 **Verify Undo/Redo functions properly in steps when doing big grouped**
 
@@ -224,7 +253,7 @@
 
 ---
 
-## P1-14
+## P1-15
 
 **Verify redo works correctly after a disconnect/reconnect**
 
@@ -238,7 +267,7 @@
 
 ---
 
-## P1-15
+## P1-16
 
 **Verify that a Quick Fix import is fully removed/returned by undo/redo**
 
@@ -255,7 +284,7 @@
 
 ---
 
-## P1-16
+## P1-17
 
 **Verify that editing a line during debug can be undone/redone without side effects**
 
@@ -272,7 +301,7 @@
 
 ---
 
-## P1-17
+## P1-18
 
 **Verify that reformatting is a single reversible Undo step**
 
@@ -284,11 +313,12 @@
    **Expected:** exact pre-format text/script is returned
   
 4. Do Redo
+   
    **Expected:** formatting reapplies identically as on Step 2.
 
 ---
 
-## P1-18
+## P1-19
 
 **Verify Undo/Redo functions properly on optimize-imports**
 
@@ -299,6 +329,64 @@
    **Expected:** the removed/optimized import returns in the same order as before.
 
 4. Do Redo
+   
    **Expected:** the unused import is removed/optimized again identically.
+
+---
+
+## P1-20
+
+**Verify template expansion collapses by Undo and re-expands as is by Redo.**
+
+1. In a .py file on a blank line type a template key `main`) 
+2. expand it with the corresponding keymap (Tab/Enter).
+   - Make sure the expansion took place and the following is now there as follows:
+```python
+   if __name__ == '__main__':
+
+
+```    
+3. Undo
+   
+   **Expected:** expansion collapses back to the original state
+
+5. Redo
+   
+   **Expected:** The same template expands again, identically as on Step 2
+
+---
+
+## P1-21
+
+**Verify that Undo/Redo properly removes and brings back generated boilerplate code (file)**
+
+1. Right click on a folder
+2. New > Python File
+3. Click on "Python unit test", set name = `testBoilerplate`), press "Enter" (when prompted to Add File to Git, press "Cancel")
+
+   **Expected:** new file is created and contains the generated boilerplate template
+
+4. Undo
+
+   **Expected:** the file is removed
+
+5. Redo
+
+   **Expected:** the file is recreated in the same folder with the same boilerplate.
+   
+---
+
+## P1-22
+
+**Verify rectangular edits keep shape on undo/redo.**
+
+1. In a small text file, prepare 3 short lines (make the first two end with a couple of spaces so there’s a neat column to target).
+2. Enter **column (block) selection** mode and select the vertical column (e.g., those trailing spaces).
+3. Type `//`.
+4. Do **undo (cmd+z)**.
+   **Expected:** `//` is removed from all selected lines; original shape/spacing restored.
+5. Do **redo (cmd+shift+z)**.
+   **Expected:** `//` returns to the same positions; shape preserved.
+   **Failure signs:** only some lines change; edges shift; redo alters shape (RD vs local).
 
 ---
