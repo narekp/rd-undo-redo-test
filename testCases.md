@@ -224,8 +224,6 @@
 
 ---
 
----
-
 ## P1-14
 
 **Verify redo works correctly after a disconnect/reconnect**
@@ -274,7 +272,7 @@
 
 ---
 
-##P1-17
+## P1-17
 
 **Verify that reformatting is a single reversible Undo step**
 
@@ -290,7 +288,7 @@
 
 ---
 
-##P1-18
+## P1-18
 
 **Verify Undo/Redo functions properly on optimize-imports**
 
