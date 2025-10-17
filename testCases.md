@@ -188,3 +188,119 @@
    **Expected:** `import` is removed.
 
 ---
+
+## P1-12
+
+**Verify that Undo/Redo functions properly for bulk replace across multiple files and remains atomic**
+
+1. Make sure a token appears across several files (`test_placeholder`).
+2. Run a "Replace in Path" (cmd+shift+r/ctrl+shift+r) to replace `test_placeholder` with `bulk_updated_placeholder` in multiple files at once ("Replace All")
+- Make sure all the ocurrences are changed to `bulk_updated_placeholder`
+3. Undo
+
+  **Expected:** All newly updated `bulk_updated_placeholder` tokens are reverted back to `test_placeholder`.
+
+4. Redo
+
+  **Expected:** The same set of files is updated again to `bulk_updated_placeholder`. 
+
+---
+
+## P1-13
+
+**Verify Undo/Redo functions properly in steps when doing big grouped**
+
+1. Create a x.py file with 10-line code block
+2. Select the block and copy to the clipboard
+3. Paste 9 times starting from row 11
+- make sure the block is pasted properly and ends on line 100
+4. Do undo three times
+
+   **Expected:** the last 3 duplicated blocks are removed (each block disappears with a single step), editor remains responsive (no freeze/stall), ends on row 70.
+
+5. Do Redo twice
+
+   **Expected:** Two blocks are restored back and ends on line 90
+
+---
+
+---
+
+## P1-14
+
+**Verify redo works correctly after a disconnect/reconnect**
+
+1. Make an edit in a file
+2. Undo
+3. Disconnect the internet so that remote session connection is lost
+4. Reconnect the internet
+5. Redo
+
+   **Expected:** the undone change returns correctly - no errors, no divergence.
+
+---
+
+## P1-15
+
+**Verify that a Quick Fix import is fully removed/returned by undo/redo**
+
+1. In any Python file, write a call to a function that isn’t imported yet (e.g., `ping()`).
+2. Place caret on the unresolved call and press **option+enter (alt+enter)** > "intention actions" choose an appropriate **Import …** intention.
+- appropriate import is done in code and the error is gone
+3. Do Undo
+
+   **Expected:** the added import is removed, code returns to the unresolved state exactly.
+
+4. Do **redo (cmd+shift+z)**.
+
+   **Expected:** the same import is added back exactly (same location in code).
+
+---
+
+## P1-16
+
+**Verify that editing a line during debug can be undone/redone without side effects**
+
+1. Open any runnable Python script and start Debug (click the green bug icon on header)
+2. Toggle a breakpoint on a line
+3. On that same line, type a small change (e.g., append a short comment).
+4. Do undo
+
+   **Expected:** the change disappears, breakpoint remains, session is stable.
+
+5. Do redo
+
+   **Expected:** the change returns, breakpoint remains unchanged.
+
+---
+
+##P1-17
+
+**Verify that reformatting is a single reversible Undo step**
+
+1. In any Python file, deliberately mess spacing/indent/blank lines.
+2. Run **Reformat Code** (option+cmd+l / alt+cmd+l).
+- make sure the IDE adjusts the formatting based on the based on the active code style scheme
+3. Do undo
+
+   **Expected:** exact pre-format text/script is returned
+  
+4. Do Redo
+   **Expected:** formatting reapplies identically as on Step 2.
+
+---
+
+##P1-18
+
+**Verify Undo/Redo functions properly on optimize-imports**
+
+1. In a .py file add an **unused import** (e.g. "import random")
+2. Run "Optimize Imports" (ctrl+opt+o / alt+ctrl+o / Code > Optimize Imports)
+3. Do Undo
+
+   **Expected:** the removed/optimized import returns in the same order as before.
+
+4. Do Redo
+   **Expected:** the unused import is removed/optimized again identically.
+
+---
