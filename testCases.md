@@ -15,10 +15,10 @@
 
 ## P1-02
 
-**Verify that rapid sequence of Undo/Redo Does Not skip or corrupt steps**
+**Verify that rapid sequence of multiple Undo/Redo Does Not skip or corrupt steps**
 
 1. Type or paste a short token (e.g., `X`) 20 times on new lines.
-2. Perform **undo (cmd+z)** quickly N times
+2. Perform **undo (cmd+z)** quickly N times (where N > 3)
 
    **Expected:** exactly N tokens are removed.
 
