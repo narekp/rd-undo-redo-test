@@ -15,7 +15,7 @@
 
 ## P1-02
 
-**Verify that rapid sequence of Undo/redo Does Not skip or corrupt steps.**
+**Verify that rapid sequence of Undo/Redo Does Not skip or corrupt steps**
 
 1. Type or paste a short token (e.g., `X`) 20 times on new lines.
 2. Perform **undo (cmd+z)** quickly N times
@@ -49,8 +49,7 @@
 
 1. Create multiple carets by adding carets to selected lines (hold the `option` key and click on the selected lines' places)
 2. Type a token `ABC` once.
-   
-   **Expected:** all carets insert simultaneously.
+   - Make sure that all carets insert simultaneously.
 
 4. Do undo
 
@@ -68,8 +67,7 @@
 
 1. Open the **same file** in right/left split (two panes) (right click the file > "Open in Right Split")
 2. Type `X` pane A
-
- **Expected:** `X`is typed in pane B on identical location (both panes mirror each other)
+- Make sure `X` is typed in pane B on identical location (both panes mirror each other)
    
 3. On pane B do Undo.
    
@@ -146,8 +144,8 @@ a. file1.py
 b. file2.py
 2. In file1.py add `def test_safe_delete(): return "hello"`
 3. In file2.py add `from file1 import test_safe_delete` and `result = test_safe_delete()`
-4. Right click on `file1` > Delete (make sure `Safe Delete`is checked) > OK > Press "Refactor Anyway"
-   - Make sure `file1` is deleted and that `file2` has unresolved reference errors on `from test1 import test_safe_delete`
+4. Right click on `file1` > Delete (make sure `Safe Delete` is checked) > OK > Press "Refactor Anyway"
+   - Make sure `file1` is deleted and that `file2` has unresolved reference errors on `from file1 import test_safe_delete`
 6. On Project panel perform Undo
 
    **Expected:**
@@ -183,18 +181,18 @@ b. file2.py
 **Verify that undo/redo history affect only the current/selected document**
 
 1. Open two different files (A and B).
-2. Make one edit in each add text `test` in each
-4. Perform Undo in `file B`
+2. Make one edit in each - add text `test`
+3. Perform Undo in `file B`
    
-   **Expected:** `test` is removed from `File B`, `file A` stays unchanged.
+   **Expected:** `test` is removed from `file B`, `file A` stays unchanged.
    
-5. In file A do Undo
+4. In `file A` do Undo
    
-   **Expected:** `test` is removed from `File A`, `file B` stays unchanged.
+   **Expected:** `test` is removed from `file A`, `file B` stays unchanged.
 
-6. In File A do Redo
+5. In File A do Redo
 
-   **Expected:** File A now has `test` again and File B still has no `test` in its body.
+   **Expected:** File A now has `test` again and `File B` still has no `test` in its body.
    
 ---
 
@@ -273,12 +271,12 @@ b. file2.py
 
 1. In any Python file, write a call to a function that isn’t imported yet (e.g., `ping()`).
 2. Place caret on the unresolved call and press (option+enter / alt+enter) > "intention actions" choose an appropriate **Import …** intention.
-- appropriate import is done in code and the error is gone
+- Make sure the appropriate import is done in code and the error is gone
 3. Undo
 
    **Expected:** the added import is removed, code returns to the unresolved state exactly.
 
-4. Do Redo.
+4. Redo.
 
    **Expected:** the same import is added back exactly (same location in code).
 
