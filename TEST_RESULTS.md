@@ -12,11 +12,13 @@
 | [Cursor placement after undo](https://github.com/narekp/rd-undo-redo-test/issues/3) | UX | P3 | Low - may affect lightly daily workflows | No |
 | [Mnemonic bookmark](https://github.com/narekp/rd-undo-redo-test/issues/5) | Bug | P1 | Medium - Mnemonic setting confusion edge case | Yes |
 
+All issues list is [here](https://github.com/narekp/rd-undo-redo-test/issues)
+
 ---
 
 ## Test Coverage
-- **21 test cases** from basic operations to daily power user developer workflows
-- **5 exploratory areas** focusing on RD-specific scenarios
+- **21 test cases** from basic operations to daily power user developer workflows, all test cases are [here](https://github.com/narekp/rd-undo-redo-test/blob/main/testCases.md)
+- **5 exploratory areas** focusing on RD-specific scenarios, more details [here](https://github.com/narekp/rd-undo-redo-test/blob/main/exploratory_areas_undo_redo_rd.md)
 - **Standalone comparison** for expected behavior baseline
 
 ---
