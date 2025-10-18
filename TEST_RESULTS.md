@@ -9,8 +9,8 @@
 | [Split editor undo stack](https://github.com/narekp/rd-undo-redo-test/issues/3) | Bug | P1 | High - affects multi-file workflows | Yes |
 | [Rapid operation skipping](https://github.com/narekp/rd-undo-redo-test/issues/2) | Bug | P1 | High - fast paced activity workflows harmed | Yes |
 | [Formatting toolbar delay](https://github.com/narekp/rd-undo-redo-test/issues/6) | Bug/UX | P3 | Low - UI inconsistency | Yes |
-| [Cursor placement after undo](https://github.com/narekp/rd-undo-redo-test/issues/3) | UX | P3 | Low - may affect lightly daily workflows | No |
-| [Mnemonic bookmark](https://github.com/narekp/rd-undo-redo-test/issues/5) | Bug | P1 | Medium - Mnemonic setting confusion edge case | Yes |
+| [Cursor placement after undo](https://github.com/narekp/rd-undo-redo-test/issues/3) | UX | P2 | Medium - may affect daily workflows, muscle memory | No |
+| [Mnemonic bookmark](https://github.com/narekp/rd-undo-redo-test/issues/5) | Bug | P3 | Low - Mnemonic setting confusion edge case | Yes |
 
 All issues list is [here](https://github.com/narekp/rd-undo-redo-test/issues)
 
