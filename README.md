@@ -1,4 +1,4 @@
-# remote‑dev undo/redo parity (jetbrains gateway + gitpod)
+# remote‑dev undo/redo parity (jetbrains gateway + gitpod (Ona))
 
 **goal**: Test undo/redo functionality in remote development (undo/redo in standalone PyCharm can be considered the expected behavior).
 
@@ -7,13 +7,18 @@
 - cases/ — one md per test case https://github.com/narekp/rd-undo-redo-test/blob/main/testCases.md
 - summary/SummaryMatrix.md — one-line status per test
 
-## Test Strategy and User Focus
+## Test Strategy and Depth
 
-**Testing Depth**: From basic operations to developer workflows
-- **TC-01 to TC-09**: Core undo/redo functionality
-- **TC-10 onwards**: Real developer scenarios (debugging, refactoring, imports, templates, etc.)
+**Level 1 - Core Functionality** (TC-01 to TC-09)
+- Typing, deletion, undo/redo flows
 
-**User-Centric Design**: Test cases modeled after actual Python developer activities in PyCharm
+**Level 2 - Developer Workflows** (TC-10 to TC-21)  
+- Real development scenarios
+- Debugging, refactoring, imports, templates
+
+**Level 3 - Edge Cases and RD Specific** (Exploratory Testing)
+- Network conditions, multi-window, Git integration
+- Where RD differences emerge
 
 ## Test Environment
 System and local IDE: PyCharm 2025.2.3 (#PY-252.26830.99), macOS 15.3.2, Apple M1 Pro
