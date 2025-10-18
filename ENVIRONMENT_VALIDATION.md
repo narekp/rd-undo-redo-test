@@ -1,4 +1,4 @@
-# Workspace Persistence Check (Done before testing session)
+# Workspace Persistence Check (Done before testing session) (update: done halfway through as Gitpod sunset)
 
 **Goal**: Find out what survives stop/start
 
