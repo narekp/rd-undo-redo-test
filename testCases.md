@@ -1,4 +1,4 @@
-## P1-01
+## TC-01
 
 **Verify that undo/redo strictly follows last-in-first-out (LIFO)**
 
@@ -13,7 +13,7 @@
 
 ---
 
-## P1-02
+## TC-02
 
 **Verify that rapid sequence of multiple Undo/Redo Does Not skip or corrupt steps**
 
@@ -28,7 +28,7 @@
 
 ---
 
-## P1-03
+## TC-03
 
 **Verify that a new edit clears the redo stack**
 
@@ -43,7 +43,7 @@
 
 ---
 
-## P1-04
+## TC-04
 
 **Verify that undo/redo is applies properly to multi-caret changes in a single step**
 
@@ -61,7 +61,7 @@
 
 ---
 
-## P1-05
+## TC-05
 
 **Verify that editing in one split reflects in the other and shares history.**
 
@@ -79,7 +79,7 @@
 
 ---
 
-## P1-06
+## TC-06
 
 **Verify that file/module rename undo/redo adjusts and reverts imports properly**
 
@@ -96,7 +96,7 @@ The original filename (`file_a.py`) and all import statements are reverted; the 
 
 ---
 
-## P1-07
+## TC-07
 
 **Verify that moving a file updates imports and is reversible**
 
@@ -114,7 +114,7 @@ The original filename (`file_a.py`) and all import statements are reverted; the 
 
 ---
 
-## P1-08
+## TC-08
 
 **Verify that file deletion undo/redo removes and restores content properly**
 
@@ -135,7 +135,7 @@ The original filename (`file_a.py`) and all import statements are reverted; the 
 
 ---
 
-## P1-09
+## TC-09
 
 **Verify that Safe Delete undo/redo removes and restores usages properly**
 
@@ -160,7 +160,7 @@ b. file2.py
    
 ---
 
-## P1-10
+## TC-10
 
 **Verify that rapid typing/deleting is properly undoable**
 
@@ -176,7 +176,7 @@ b. file2.py
  
 ---
 
-## P1-11
+## TC-11
 
 **Verify that undo/redo history affect only the current/selected document**
 
@@ -196,7 +196,7 @@ b. file2.py
    
 ---
 
-## P1-12
+## TC-12
 
 **Verify Undo behavior when Remote Session connection is disconnected and post-reconnection**
 
@@ -216,7 +216,7 @@ b. file2.py
 
 ---
 
-## P1-13
+## TC-13
 
 **Verify that Undo/Redo functions properly for bulk replace across multiple files and remains atomic**
 
@@ -233,7 +233,7 @@ b. file2.py
 
 ---
 
-## P1-14
+## TC-14
 
 **Verify Undo/Redo functions properly in steps when doing big grouped**
 
@@ -251,7 +251,7 @@ b. file2.py
 
 ---
 
-## P1-15
+## TC-15
 
 **Verify redo works correctly after a disconnect/reconnect**
 
@@ -265,7 +265,7 @@ b. file2.py
 
 ---
 
-## P1-16
+## TC-16
 
 **Verify that a Quick Fix import is fully removed/returned by undo/redo**
 
@@ -282,7 +282,7 @@ b. file2.py
 
 ---
 
-## P1-17
+## TC-17
 
 **Verify that editing a line during debug can be undone/redone without side effects**
 
@@ -299,7 +299,7 @@ b. file2.py
 
 ---
 
-## P1-18
+## TC-18
 
 **Verify that reformatting is a single reversible Undo step**
 
@@ -316,7 +316,7 @@ b. file2.py
 
 ---
 
-## P1-19
+## TC-19
 
 **Verify Undo/Redo functions properly on optimize-imports**
 
@@ -332,7 +332,7 @@ b. file2.py
 
 ---
 
-## P1-20
+## TC-20
 
 **Verify template expansion collapses by Undo and re-expands as is by Redo.**
 
@@ -354,7 +354,7 @@ b. file2.py
 
 ---
 
-## P1-21
+## TC-21
 
 **Verify that Undo/Redo properly removes and brings back generated boilerplate code (file)**
 
