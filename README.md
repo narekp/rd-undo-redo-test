@@ -1,6 +1,6 @@
 # Remote Development Undo/Redo Testing
 
-**goal**: Test undo/redo functionality in remote development (undo/redo in standalone PyCharm can be considered the expected behavior).
+**Goal**: Test undo/redo functionality in remote development (standalone PyCharm = expected behavior)
 
 ## Quick Navigation
 - [Test Results and Findings](https://github.com/narekp/rd-undo-redo-test/blob/main/TEST_RESULTS.md)
@@ -8,20 +8,26 @@
 - [Exploratory Testing](https://github.com/narekp/rd-undo-redo-test/blob/main/exploratory_areas_undo_redo_rd.md)
 - [All Issues Filed](https://github.com/narekp/rd-undo-redo-test/issues)
 
-## Test Strategy and Depth
+## Scope and Testing Depth
 
-**Level 1 - Developer Workflows** (TC-10 to TC-21)
-- Real development scenarios
-- Debugging, refactoring, imports, templates
-- **What actually impacts developer productivity**
+### Scope: Undo/Redo in Remote Development
+- **Core Editor Operations**: Typing, deletion, selection
+- **File and Project Operations**: Create, delete, move, rename files
+- **Daily Development Workflows**: Debugging, refactoring, imports, templates
+- **IDE Integration**: Multi-window, Git, network scenarios (exploratory)
 
-**Level 2 - Core Functionality** (TC-01 to TC-09)
+### Depth
+**Level 1 - Foundation** (TC-01 to TC-09)
 - Basic typing, deletion, undo/redo flows
-- **This is the foundation that must work reliably**
+- This is the foundation that must work reliably
 
-**Level 3 - Edge Cases & RD Specific** (Exploratory)
-- Network conditions, multi-window, Git integration
-- Where Remote Development differences may come out
+**Level 2 - Professional Workflows** (TC-10 to TC-21)  
+- Real Python development scenarios used daily
+- What actually impacts developer productivity and trust
+
+**Level 3 - Edge Cases, RD-Specific** (Exploratory)
+- Network conditions, reconnection, multi-window behavior
+- Where Remote Development differences from standalone emerge
 
 ## Test Environment
 System and local IDE: PyCharm 2025.2.3 (#PY-252.26830.99), macOS 15.3.2, Apple M1 Pro
