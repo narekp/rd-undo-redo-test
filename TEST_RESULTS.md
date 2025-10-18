@@ -1,6 +1,16 @@
 # Test Results: Undo/Redo: Remote Development
 
-**RD vs Standalone**: 90%+ Core functionality matches
+## 🎯 Executive Summary
+**Status**: Core functionality stable • 3 critical workflow issues found • 90%+ parity with standalone
+
+| Area | Status | Key Finding |
+|------|--------|-------------|
+| Basic Editing | ✅ Stable | All fundamental undo/redo works |
+| Developer Workflows | ⚠️ Mixed | 2 critical issues affect daily work |
+| File Operations | ✅ Stable | Safe delete, move, rename all work |
+| Multi-window | ❌ Broken | Split editor undo stack corrupted |
+
+---
 
 ## Issue Analysis
 | Issue | Type | Priority | User Impact | RD Specific |
@@ -12,7 +22,8 @@
 | [Cursor placement after undo](https://github.com/narekp/rd-undo-redo-test/issues/4) | UX | P2 | Medium - may affect daily workflows, muscle memory | No |
 | [Mnemonic bookmark](https://github.com/narekp/rd-undo-redo-test/issues/5) | Bug | P3 | Low - Mnemonic setting confusion edge case | Yes |
 
-All issues list is [here](https://github.com/narekp/rd-undo-redo-test/issues)
+
+
 
 ---
 
