@@ -1,9 +1,12 @@
-# remote‑dev undo/redo parity (jetbrains gateway + gitpod (Ona))
+# Remote Development Undo/Redo Testing
 
 **goal**: Test undo/redo functionality in remote development (undo/redo in standalone PyCharm can be considered the expected behavior).
 
-## Test Artifacts
-- cases/ — one md per test case https://github.com/narekp/rd-undo-redo-test/blob/main/testCases.md
+## Quick Navigation
+- [Test Results and Findings](https://github.com/narekp/rd-undo-redo-test/blob/main/TEST_RESULTS.md)
+- [All Test Cases](https://github.com/narekp/rd-undo-redo-test/blob/main/testCases.md) 
+- [Exploratory Testing](https://github.com/narekp/rd-undo-redo-test/blob/main/exploratory_areas_undo_redo_rd.md)
+- [All Issues Filed](https://github.com/narekp/rd-undo-redo-test/issues)
 
 ## Test Strategy and Depth
 
