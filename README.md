@@ -3,10 +3,17 @@
 **goal**: Test undo/redo functionality in remote development (undo/redo in standalone PyCharm can be considered the expected behavior).
 
 ## Test Artifacts
-- plan/ScopeMatrix.md — in/out + depth (L1/L2/L3) https://github.com/narekp/rd-undo-redo-test/blob/main/scopeMatrix.md
 - plan/TestPlan.md — objective, envs, entry/exit, evidence, notes, etc. 
 - cases/ — one md per test case https://github.com/narekp/rd-undo-redo-test/blob/main/testCases.md
 - summary/SummaryMatrix.md — one-line status per test
+
+## Test Strategy and User Focus
+
+**Testing Depth**: From basic operations to developer workflows
+- **TC-01 to TC-09**: Core undo/redo functionality
+- **TC-10 onwards**: Real developer scenarios (debugging, refactoring, imports, templates, etc.)
+
+**User-Centric Design**: Test cases modeled after actual Python developer activities in PyCharm
 
 ## Test Environment
 System and local IDE: PyCharm 2025.2.3 (#PY-252.26830.99), macOS 15.3.2, Apple M1 Pro
