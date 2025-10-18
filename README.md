@@ -9,16 +9,18 @@
 
 ## Test Strategy and Depth
 
-**Level 1 - Core Functionality** (TC-01 to TC-09)
-- Typing, deletion, undo/redo flows
-
-**Level 2 - Developer Workflows** (TC-10 to TC-21)  
+**Level 1 - Developer Workflows** (TC-10 to TC-21)
 - Real development scenarios
 - Debugging, refactoring, imports, templates
+- **What actually impacts developer productivity**
 
-**Level 3 - Edge Cases and RD Specific** (Exploratory Testing)
+**Level 2 - Core Functionality** (TC-01 to TC-09)
+- Basic typing, deletion, undo/redo flows
+- **This is the foundation that must work reliably**
+
+**Level 3 - Edge Cases & RD Specific** (Exploratory)
 - Network conditions, multi-window, Git integration
-- Where RD differences emerge
+- Where Remote Development differences may come out
 
 ## Test Environment
 System and local IDE: PyCharm 2025.2.3 (#PY-252.26830.99), macOS 15.3.2, Apple M1 Pro
