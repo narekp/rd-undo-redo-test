@@ -3,9 +3,7 @@
 **goal**: Test undo/redo functionality in remote development (undo/redo in standalone PyCharm can be considered the expected behavior).
 
 ## Test Artifacts
-- plan/TestPlan.md — objective, envs, entry/exit, evidence, notes, etc. 
 - cases/ — one md per test case https://github.com/narekp/rd-undo-redo-test/blob/main/testCases.md
-- summary/SummaryMatrix.md — one-line status per test
 
 ## Test Strategy and Depth
 
@@ -46,13 +44,6 @@ Purpose: contingency only - validated and working (executing on Ona)
 ## Time estimate and Delivery
 - planned effort: ~16 hours
 - planned delivery: Tuesday, Oct 14
-
-## Bug Priority Definitions and Issue Labels
-    - Created a label for the UI / UX tickets - "ui / ux".
-    - For the severities there are "p1", "p2", "p3" created, where:
-    p1 (Critical): core functionality is blocked
-    p2 (High): issue that impedes user flows and/or major UX friction
-    p3 (Medium/Low): medium concerns or minor quirks or issues
 
 Using priorities (p1, p2, p3) instead of severity levels/labels to make triage more straightforward - answers one question: how soon should it be fixed?
 - Issue must have exactly one priority label (p1 / p2 / p3).
