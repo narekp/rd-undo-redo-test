@@ -15,8 +15,7 @@
 - **Detached window** - Undo/redo should work same as main window
 
 ## C) Git Operations
-- **Git changes + normal edits mixed** - Should not create extra lines or delete wrong lines
-- **Merge conflict fixes** - Undo should not bring back old conflict text
+- **Git changes + RD undo/redo** - Should not corrupt content, no extra lines no wrongly deleted lines
 
 ## D) Text Files
 - **Line endings** - Should stay same after undo/redo
